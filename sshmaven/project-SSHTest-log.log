@@ -1,0 +1,1208 @@
+[INFO][2015-08-27 10:02:50,843][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-27 10:02:51,170][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Thu Aug 27 10:02:51 CST 2015]; root of context hierarchy
+ [INFO][2015-08-27 10:02:51,271][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-27 10:02:51,767][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-27 10:02:51,908][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-27 10:02:52,422][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-27 10:02:52,429][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-27 10:02:52,537][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3491e86e: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-27 10:02:52,611][org.springframework.beans.factory.support.DefaultListableBeanFactory]Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@3491e86e: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [ERROR][2015-08-27 10:02:52,644][org.springframework.web.context.ContextLoader]Context initialization failed
+ org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.dhcc.service.UserService com.dhcc.controller.UserController.userService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.dhcc.service.UserService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1116)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:519)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:458)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:295)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:223)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:292)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:628)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:932)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:479)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:389)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:294)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:112)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4135)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4630)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:862)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:286)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:197)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.dhcc.service.UserService com.dhcc.controller.UserController.userService; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.dhcc.service.UserService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:285)
+	... 44 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.dhcc.service.UserService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:988)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:858)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:770)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:486)
+	... 46 more
+[INFO][2015-08-27 10:21:31,651][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-27 10:21:31,753][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Thu Aug 27 10:21:31 CST 2015]; root of context hierarchy
+ [INFO][2015-08-27 10:21:31,806][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-27 10:21:31,994][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-27 10:21:32,075][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-27 10:21:32,428][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-27 10:21:32,437][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-27 10:21:32,486][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@409986fe: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-27 10:21:33,023][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-27 10:21:33,362][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-27 10:21:33,371][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-27 10:21:33,377][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-27 10:21:33,395][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-27 10:21:35,893][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-27 10:21:35,930][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-27 10:21:35,949][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-27 10:21:36,679][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-27 10:21:36,679][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-27 10:21:36,684][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-27 10:21:36,756][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [INFO][2015-08-27 10:21:36,769][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [INFO][2015-08-27 10:21:37,195][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-27 10:21:37,490][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-27 10:21:32",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:314622131, ConnectTime:"2015-08-27 10:21:35", UseCount:2, LastActiveTime:"2015-08-27 10:21:37"}
+	]
+}
+
+[
+	{
+	ID:314622131, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-27 10:21:37,523][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 5870 ms
+ [INFO][2015-08-27 10:21:37,616][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-27 10:21:37,620][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Thu Aug 27 10:21:37 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-27 10:21:37,621][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-27 10:21:37,653][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-27 10:21:37,720][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-27 10:21:37,723][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@47c7a9e5: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@409986fe
+ [INFO][2015-08-27 10:21:38,514][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-27 10:21:38,514][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-27 10:21:38,514][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-27 10:21:38,514][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-27 10:21:38,514][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-27 10:21:38,514][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-27 10:21:38,613][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 997 ms
+ [INFO][2015-08-27 10:29:38,222][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-27 10:29:38,369][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Thu Aug 27 10:29:38 CST 2015]; root of context hierarchy
+ [INFO][2015-08-27 10:29:38,443][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-27 10:29:38,643][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-27 10:29:38,797][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-27 10:29:39,244][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-27 10:29:39,256][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-27 10:29:39,318][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@22590e3e: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-27 10:29:39,655][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-27 10:29:39,875][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-27 10:29:39,887][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-27 10:29:39,891][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-27 10:29:39,894][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-27 10:29:40,658][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-27 10:29:40,691][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-27 10:29:40,702][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-27 10:29:41,337][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-27 10:29:41,337][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-27 10:29:41,343][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-27 10:29:41,424][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-27 10:29:41,425][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [regtime, password, id, username]
+ [INFO][2015-08-27 10:29:41,425][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-27 10:29:41,425][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-27 10:29:41,426][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-27 10:29:41,720][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-27 10:29:39",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1181889508, ConnectTime:"2015-08-27 10:29:40", UseCount:2, LastActiveTime:"2015-08-27 10:29:41"}
+	]
+}
+
+[
+	{
+	ID:1181889508, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-27 10:29:41,731][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3508 ms
+ [INFO][2015-08-27 10:29:41,794][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-27 10:29:41,800][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Thu Aug 27 10:29:41 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-27 10:29:41,801][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-27 10:29:41,887][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-27 10:29:41,915][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-27 10:29:41,918][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@580fd26b: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@22590e3e
+ [INFO][2015-08-27 10:29:42,345][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-27 10:29:42,345][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-27 10:29:42,346][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-27 10:29:42,346][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-27 10:29:42,346][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-27 10:29:42,346][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-27 10:29:42,398][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 604 ms
+ [INFO][2015-08-28 09:57:17,003][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 09:57:17,339][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 09:57:17 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 09:57:17,458][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 09:57:18,033][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 09:57:18,132][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 09:57:18,671][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 09:57:18,677][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 09:57:18,781][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@72d0f2b4: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 09:57:19,410][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 09:57:19,818][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 09:57:19,830][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 09:57:19,843][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 09:57:19,858][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 09:57:21,172][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 09:57:21,240][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 09:57:21,280][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 09:57:22,224][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 09:57:22,224][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 09:57:22,228][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 09:57:22,262][java.sql.DatabaseMetaData]HHH000262: Table not found: tstudent
+ [INFO][2015-08-28 09:57:22,264][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [INFO][2015-08-28 09:57:22,266][java.sql.DatabaseMetaData]HHH000262: Table not found: tstudent
+ [INFO][2015-08-28 09:57:22,267][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [ERROR][2015-08-28 09:57:22,424][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000388: Unsuccessful: create table tuser (id varchar(10) not null auto_increment, password varchar(20) not null, username varchar(50) not null, primary key (id))
+ [ERROR][2015-08-28 09:57:22,425][org.hibernate.tool.hbm2ddl.SchemaUpdate]Incorrect column specifier for column 'id'
+ [INFO][2015-08-28 09:57:22,425][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 09:57:22,868][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 09:57:18",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:254358847, ConnectTime:"2015-08-28 09:57:21", UseCount:2, LastActiveTime:"2015-08-28 09:57:22"}
+	]
+}
+
+[
+	{
+	ID:254358847, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 09:57:22,903][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 5889 ms
+ [INFO][2015-08-28 09:57:23,021][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 09:57:23,025][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 09:57:23 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 09:57:23,026][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 09:57:23,061][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 09:57:23,108][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 09:57:23,110][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2b148329: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@72d0f2b4
+ [INFO][2015-08-28 09:57:24,040][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 09:57:24,040][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 09:57:24,040][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 09:57:24,040][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 09:57:24,040][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 09:57:24,041][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 09:57:24,114][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 1093 ms
+ [WARN][2015-08-28 10:00:08,115][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/index.jsp/user] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 10:00:50,092][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/index.jsp/user/] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 10:00:58,864][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]SQL Error: 1146, SQLState: 42S02
+ [ERROR][2015-08-28 10:00:58,864][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]Table 'test_ssh.tuser' doesn't exist
+ [WARN][2015-08-28 10:01:14,189][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]SQL Error: 1146, SQLState: 42S02
+ [ERROR][2015-08-28 10:01:14,194][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]Table 'test_ssh.tuser' doesn't exist
+ [INFO][2015-08-28 10:07:06,419][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 10:07:06,546][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 10:07:06 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 10:07:06,622][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 10:07:06,821][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 10:07:06,918][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 10:07:07,230][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 10:07:07,239][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 10:07:07,290][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@19b047fe: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 10:07:07,660][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 10:07:07,854][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 10:07:07,866][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 10:07:07,870][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 10:07:07,873][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 10:07:08,514][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 10:07:08,545][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 10:07:08,552][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 10:07:08,986][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 10:07:08,986][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 10:07:08,992][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 10:07:09,110][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 10:07:09,110][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 10:07:09,110][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 10:07:09,111][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 10:07:09,112][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [INFO][2015-08-28 10:07:09,115][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [ERROR][2015-08-28 10:07:09,123][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000388: Unsuccessful: create table tuser (id varchar(10) not null auto_increment, password varchar(20) not null, username varchar(50) not null, primary key (id))
+ [ERROR][2015-08-28 10:07:09,123][org.hibernate.tool.hbm2ddl.SchemaUpdate]Incorrect column specifier for column 'id'
+ [INFO][2015-08-28 10:07:09,123][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 10:07:09,364][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 10:07:07",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:400216879, ConnectTime:"2015-08-28 10:07:08", UseCount:2, LastActiveTime:"2015-08-28 10:07:09"}
+	]
+}
+
+[
+	{
+	ID:400216879, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 10:07:09,375][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 2955 ms
+ [INFO][2015-08-28 10:07:09,438][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 10:07:09,448][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 10:07:09 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 10:07:09,449][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 10:07:09,498][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 10:07:09,519][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 10:07:09,521][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4570d7b6: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@19b047fe
+ [INFO][2015-08-28 10:07:09,985][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 10:07:09,985][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 10:07:09,985][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 10:07:09,985][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 10:07:09,985][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 10:07:09,985][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 10:07:10,043][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 605 ms
+ [WARN][2015-08-28 10:08:12,433][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]SQL Error: 1146, SQLState: 42S02
+ [ERROR][2015-08-28 10:08:12,435][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]Table 'test_ssh.tuser' doesn't exist
+ [WARN][2015-08-28 10:08:39,961][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]SQL Error: 1146, SQLState: 42S02
+ [ERROR][2015-08-28 10:08:39,961][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]Table 'test_ssh.tuser' doesn't exist
+ [WARN][2015-08-28 10:08:45,030][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]SQL Error: 1146, SQLState: 42S02
+ [ERROR][2015-08-28 10:08:45,030][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]Table 'test_ssh.tuser' doesn't exist
+ [INFO][2015-08-28 10:16:01,325][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 10:16:01,451][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 10:16:01 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 10:16:01,536][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 10:16:01,736][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 10:16:01,833][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 10:16:02,140][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 10:16:02,149][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 10:16:02,195][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@19b047fe: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 10:16:02,579][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 10:16:02,772][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 10:16:02,785][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 10:16:02,789][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 10:16:02,792][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 10:16:03,518][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 10:16:03,555][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 10:16:03,564][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 10:16:04,034][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 10:16:04,034][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 10:16:04,040][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 10:16:04,046][java.sql.DatabaseMetaData]HHH000262: Table not found: tstudent
+ [INFO][2015-08-28 10:16:04,049][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [INFO][2015-08-28 10:16:04,050][java.sql.DatabaseMetaData]HHH000262: Table not found: tstudent
+ [INFO][2015-08-28 10:16:04,052][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [ERROR][2015-08-28 10:16:04,108][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000388: Unsuccessful: create table tuser (id varchar(10) not null auto_increment, password varchar(20) not null, username varchar(50) not null, primary key (id))
+ [ERROR][2015-08-28 10:16:04,108][org.hibernate.tool.hbm2ddl.SchemaUpdate]Incorrect column specifier for column 'id'
+ [INFO][2015-08-28 10:16:04,108][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 10:16:04,346][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 10:16:02",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:854367376, ConnectTime:"2015-08-28 10:16:03", UseCount:2, LastActiveTime:"2015-08-28 10:16:04"}
+	]
+}
+
+[
+	{
+	ID:854367376, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 10:16:04,354][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3028 ms
+ [INFO][2015-08-28 10:16:04,418][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 10:16:04,424][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 10:16:04 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 10:16:04,425][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 10:16:04,476][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 10:16:04,499][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 10:16:04,502][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@21bd128b: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@19b047fe
+ [INFO][2015-08-28 10:16:04,966][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 10:16:04,967][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 10:16:04,967][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 10:16:04,967][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 10:16:04,967][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 10:16:04,967][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 10:16:05,031][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 613 ms
+ [INFO][2015-08-28 10:24:54,224][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 10:24:54,350][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 10:24:54 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 10:24:54,424][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 10:24:54,621][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 10:24:54,716][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 10:24:55,085][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 10:24:55,091][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 10:24:55,138][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@53dad875: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 10:24:55,471][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 10:24:55,680][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 10:24:55,689][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 10:24:55,693][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 10:24:55,695][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 10:24:56,433][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 10:24:56,471][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 10:24:56,479][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 10:24:57,000][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 10:24:57,000][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 10:24:57,005][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 10:24:57,063][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 10:24:57,063][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 10:24:57,064][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 10:24:57,064][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 10:24:57,066][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [INFO][2015-08-28 10:24:57,069][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [ERROR][2015-08-28 10:24:57,081][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000388: Unsuccessful: create table tuser (uid varchar(10) not null auto_increment, password varchar(20) not null, username varchar(50) not null, primary key (uid))
+ [ERROR][2015-08-28 10:24:57,081][org.hibernate.tool.hbm2ddl.SchemaUpdate]Incorrect column specifier for column 'uid'
+ [INFO][2015-08-28 10:24:57,082][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 10:24:57,374][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 10:24:55",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:871065432, ConnectTime:"2015-08-28 10:24:56", UseCount:2, LastActiveTime:"2015-08-28 10:24:57"}
+	]
+}
+
+[
+	{
+	ID:871065432, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 10:24:57,383][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3158 ms
+ [INFO][2015-08-28 10:24:57,443][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 10:24:57,448][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 10:24:57 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 10:24:57,450][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 10:24:57,495][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 10:24:57,519][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 10:24:57,521][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@318c68d5: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@53dad875
+ [INFO][2015-08-28 10:24:57,882][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 10:24:57,882][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 10:24:57,882][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 10:24:57,882][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 10:24:57,882][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 10:24:57,882][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 10:24:57,935][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 492 ms
+ [WARN][2015-08-28 10:25:41,507][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]SQL Error: 1146, SQLState: 42S02
+ [ERROR][2015-08-28 10:25:41,508][org.hibernate.engine.jdbc.spi.SqlExceptionHelper]Table 'test_ssh.tuser' doesn't exist
+ [INFO][2015-08-28 10:39:33,028][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 10:39:33,162][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 10:39:33 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 10:39:33,243][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 10:39:33,443][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 10:39:33,537][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 10:39:33,869][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 10:39:33,878][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 10:39:33,923][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@19b047fe: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 10:39:34,316][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 10:39:34,490][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 10:39:34,499][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 10:39:34,502][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 10:39:34,503][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 10:39:35,149][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 10:39:35,186][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 10:39:35,195][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 10:39:35,644][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 10:39:35,645][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 10:39:35,650][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 10:39:35,655][java.sql.DatabaseMetaData]HHH000262: Table not found: tstudent
+ [INFO][2015-08-28 10:39:35,658][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [INFO][2015-08-28 10:39:35,659][java.sql.DatabaseMetaData]HHH000262: Table not found: tstudent
+ [INFO][2015-08-28 10:39:35,661][java.sql.DatabaseMetaData]HHH000262: Table not found: tuser
+ [INFO][2015-08-28 10:39:35,760][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 10:39:36,029][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 10:39:34",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:2120404899, ConnectTime:"2015-08-28 10:39:35", UseCount:2, LastActiveTime:"2015-08-28 10:39:35"}
+	]
+}
+
+[
+	{
+	ID:2120404899, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 10:39:36,039][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3010 ms
+ [INFO][2015-08-28 10:39:36,098][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 10:39:36,104][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 10:39:36 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 10:39:36,106][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 10:39:36,152][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 10:39:36,172][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 10:39:36,174][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@38d08cb5: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@19b047fe
+ [INFO][2015-08-28 10:39:36,638][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 10:39:36,639][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 10:39:36,639][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 10:39:36,639][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 10:39:36,639][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 10:39:36,639][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 10:39:36,701][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 603 ms
+ [INFO][2015-08-28 11:12:22,755][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 11:12:22,882][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 11:12:22 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 11:12:22,964][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 11:12:23,182][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:12:23,301][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 11:12:23,621][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 11:12:23,631][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:12:23,685][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@409986fe: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 11:12:24,059][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 11:12:24,249][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 11:12:24,261][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 11:12:24,263][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 11:12:24,266][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 11:12:24,916][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 11:12:24,948][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 11:12:24,953][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 11:12:25,420][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 11:12:25,420][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 11:12:25,426][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 11:12:25,472][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 11:12:25,473][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 11:12:25,473][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:12:25,473][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:12:25,505][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 11:12:25,505][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 11:12:25,505][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:12:25,506][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:12:25,507][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 11:12:25,757][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 11:12:23",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1323996324, ConnectTime:"2015-08-28 11:12:24", UseCount:2, LastActiveTime:"2015-08-28 11:12:25"}
+	]
+}
+
+[
+	{
+	ID:1323996324, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 11:12:25,763][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3007 ms
+ [INFO][2015-08-28 11:12:25,819][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 11:12:25,825][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 11:12:25 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 11:12:25,827][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 11:12:25,871][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:12:25,893][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:12:25,896][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7e91ed74: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@409986fe
+ [INFO][2015-08-28 11:12:26,339][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 11:12:26,339][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 11:12:26,339][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 11:12:26,340][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 11:12:26,340][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 11:12:26,340][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 11:12:26,399][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 580 ms
+ [WARN][2015-08-28 11:12:42,738][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/jsp/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:12:42,738][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/jsp/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:12:42,739][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/jsp/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:16:42,868][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:16:42,868][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:16:42,869][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [INFO][2015-08-28 11:23:59,262][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 11:23:59,403][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 11:23:59 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 11:23:59,478][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 11:23:59,684][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:23:59,777][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 11:24:00,060][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 11:24:00,071][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:24:00,143][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@19b047fe: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 11:24:00,478][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 11:24:00,636][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 11:24:00,644][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 11:24:00,647][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 11:24:00,649][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 11:24:01,393][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 11:24:01,435][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 11:24:01,447][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 11:24:02,196][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 11:24:02,196][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 11:24:02,206][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 11:24:02,270][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 11:24:02,270][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 11:24:02,271][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:24:02,271][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:24:02,305][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 11:24:02,306][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 11:24:02,306][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:24:02,306][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:24:02,307][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 11:24:02,622][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 11:24:00",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1667348377, ConnectTime:"2015-08-28 11:24:01", UseCount:2, LastActiveTime:"2015-08-28 11:24:02"}
+	]
+}
+
+[
+	{
+	ID:1667348377, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 11:24:02,632][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3369 ms
+ [INFO][2015-08-28 11:24:02,690][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 11:24:02,697][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 11:24:02 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 11:24:02,698][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 11:24:02,738][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:24:02,762][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:24:02,765][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@78d9f51b: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@19b047fe
+ [INFO][2015-08-28 11:24:03,221][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 11:24:03,221][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 11:24:03,221][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 11:24:03,221][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 11:24:03,221][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 11:24:03,221][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 11:24:03,282][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 592 ms
+ [WARN][2015-08-28 11:24:03,843][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:24:03,844][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:24:03,849][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:24:42,624][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:25:04,898][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:26:51,906][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:27:12,924][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:27:12,924][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [INFO][2015-08-28 11:28:25,376][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 11:28:25,489][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 11:28:25 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 11:28:25,547][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 11:28:25,782][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:28:25,870][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 11:28:26,180][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 11:28:26,189][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:28:26,241][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@446c3920: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 11:28:26,525][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 11:28:26,714][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 11:28:26,726][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 11:28:26,729][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 11:28:26,731][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 11:28:27,588][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 11:28:27,639][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 11:28:27,652][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 11:28:28,294][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 11:28:28,294][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 11:28:28,301][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 11:28:28,350][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 11:28:28,350][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 11:28:28,351][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:28:28,351][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:28:28,376][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 11:28:28,376][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 11:28:28,376][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:28:28,376][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:28:28,379][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 11:28:28,622][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 11:28:26",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1613092752, ConnectTime:"2015-08-28 11:28:27", UseCount:2, LastActiveTime:"2015-08-28 11:28:28"}
+	]
+}
+
+[
+	{
+	ID:1613092752, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 11:28:28,630][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3253 ms
+ [INFO][2015-08-28 11:28:28,687][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 11:28:28,692][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 11:28:28 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 11:28:28,693][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 11:28:28,734][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:28:28,755][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:28:28,757][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1290ed28: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@446c3920
+ [INFO][2015-08-28 11:28:29,236][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 11:28:29,237][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 11:28:29,237][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 11:28:29,237][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 11:28:29,237][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 11:28:29,237][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 11:28:29,292][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 605 ms
+ [INFO][2015-08-28 11:30:42,757][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 11:30:42,891][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 11:30:42 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 11:30:42,967][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 11:30:43,194][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:30:43,324][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 11:30:43,552][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 11:30:43,559][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:30:43,594][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5de6cf3a: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 11:30:43,882][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 11:30:44,084][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 11:30:44,093][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 11:30:44,097][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 11:30:44,099][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 11:30:45,211][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 11:30:45,258][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 11:30:45,268][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 11:30:45,696][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 11:30:45,697][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 11:30:45,703][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 11:30:45,743][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 11:30:45,744][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 11:30:45,744][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:30:45,744][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:30:45,765][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 11:30:45,766][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 11:30:45,766][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:30:45,766][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:30:45,767][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 11:30:45,988][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 11:30:43",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1756333997, ConnectTime:"2015-08-28 11:30:45", UseCount:2, LastActiveTime:"2015-08-28 11:30:45"}
+	]
+}
+
+[
+	{
+	ID:1756333997, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 11:30:45,997][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3239 ms
+ [INFO][2015-08-28 11:30:46,050][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 11:30:46,056][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 11:30:46 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 11:30:46,057][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 11:30:46,094][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:30:46,117][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:30:46,120][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4844930a: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@5de6cf3a
+ [INFO][2015-08-28 11:30:46,571][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 11:30:46,571][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 11:30:46,571][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 11:30:46,572][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 11:30:46,572][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 11:30:46,572][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 11:30:46,626][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 576 ms
+ [INFO][2015-08-28 11:40:22,166][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 11:40:22,301][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 11:40:22 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 11:40:22,387][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 11:40:22,592][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:40:22,691][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 11:40:23,014][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 11:40:23,022][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:40:23,074][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@118102ee: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 11:40:23,566][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 11:40:23,780][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 11:40:23,787][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 11:40:23,790][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 11:40:23,792][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 11:40:24,430][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 11:40:24,470][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 11:40:24,478][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 11:40:24,935][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 11:40:24,935][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 11:40:24,939][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 11:40:24,981][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 11:40:24,981][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 11:40:24,981][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:40:24,982][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:40:25,001][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 11:40:25,001][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 11:40:25,001][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 11:40:25,002][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 11:40:25,002][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 11:40:25,248][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 11:40:23",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:400216879, ConnectTime:"2015-08-28 11:40:24", UseCount:2, LastActiveTime:"2015-08-28 11:40:25"}
+	]
+}
+
+[
+	{
+	ID:400216879, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 11:40:25,256][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3089 ms
+ [INFO][2015-08-28 11:40:25,319][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 11:40:25,325][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 11:40:25 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 11:40:25,328][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 11:40:25,412][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 11:40:25,440][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 11:40:25,443][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4570d7b6: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@118102ee
+ [INFO][2015-08-28 11:40:25,886][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg] onto handler 'userController'
+ [INFO][2015-08-28 11:40:25,887][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg.*] onto handler 'userController'
+ [INFO][2015-08-28 11:40:25,887][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/reg/] onto handler 'userController'
+ [INFO][2015-08-28 11:40:25,887][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user] onto handler 'userController'
+ [INFO][2015-08-28 11:40:25,887][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user.*] onto handler 'userController'
+ [INFO][2015-08-28 11:40:25,887][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/user/] onto handler 'userController'
+ [INFO][2015-08-28 11:40:25,942][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 623 ms
+ [WARN][2015-08-28 11:40:45,087][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:40:45,088][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:40:45,088][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:40:50,319][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:40:50,320][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:40:50,328][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:40:51,134][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:40:51,134][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:40:51,136][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:17,699][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:17,699][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:17,702][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:20,687][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:20,688][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:20,689][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:43,507][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:43,508][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:42:43,510][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:32,596][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:32,596][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:32,596][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:35,191][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:35,191][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:35,192][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:36,798][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:36,799][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 11:43:36,799][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [INFO][2015-08-28 12:46:42,034][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 12:46:42,184][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 12:46:42 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 12:46:42,254][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 12:46:42,556][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 12:46:42,658][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 12:46:43,008][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 12:46:43,017][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 12:46:43,065][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1639f93a: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 12:46:43,431][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 12:46:43,650][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 12:46:43,657][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 12:46:43,660][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 12:46:43,662][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 12:46:44,630][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 12:46:44,666][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 12:46:44,672][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 12:46:45,840][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 12:46:45,840][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 12:46:45,848][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 12:46:46,062][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 12:46:46,062][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 12:46:46,062][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 12:46:46,063][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 12:46:46,120][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 12:46:46,120][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 12:46:46,120][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 12:46:46,120][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 12:46:46,121][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 12:46:46,342][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 12:46:43",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:143239336, ConnectTime:"2015-08-28 12:46:44", UseCount:2, LastActiveTime:"2015-08-28 12:46:46"}
+	]
+}
+
+[
+	{
+	ID:143239336, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 12:46:46,352][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 4318 ms
+ [INFO][2015-08-28 12:46:46,414][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 12:46:46,420][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 12:46:46 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 12:46:46,421][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 12:46:46,477][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 12:46:46,548][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 12:46:46,551][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@7a2ab862: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#1,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#2,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#3,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@1639f93a
+ [INFO][2015-08-28 12:46:46,919][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO][2015-08-28 12:46:46,952][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO][2015-08-28 12:46:46,954][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+ [INFO][2015-08-28 12:46:46,956][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+ [INFO][2015-08-28 12:46:47,038][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 623 ms
+ [INFO][2015-08-28 12:47:40,030][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 12:47:40,167][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 12:47:40 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 12:47:40,231][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 12:47:40,434][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 12:47:40,532][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 12:47:40,847][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 12:47:40,856][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 12:47:40,907][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@243f003c: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 12:47:41,235][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 12:47:41,450][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 12:47:41,461][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 12:47:41,465][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 12:47:41,468][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 12:47:42,150][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 12:47:42,181][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 12:47:42,188][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 12:47:42,959][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 12:47:42,959][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 12:47:42,966][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 12:47:43,022][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 12:47:43,023][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 12:47:43,023][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 12:47:43,023][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 12:47:43,059][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 12:47:43,059][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 12:47:43,059][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 12:47:43,060][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 12:47:43,061][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 12:47:43,351][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 12:47:40",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1613092752, ConnectTime:"2015-08-28 12:47:42", UseCount:2, LastActiveTime:"2015-08-28 12:47:43"}
+	]
+}
+
+[
+	{
+	ID:1613092752, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 12:47:43,363][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3332 ms
+ [INFO][2015-08-28 12:47:43,413][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 12:47:43,418][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 12:47:43 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 12:47:43,420][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 12:47:43,468][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 12:47:43,529][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 12:47:43,533][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64f9f455: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#1,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#2,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#3,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@243f003c
+ [INFO][2015-08-28 12:47:43,935][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO][2015-08-28 12:47:43,966][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO][2015-08-28 12:47:43,968][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+ [INFO][2015-08-28 12:47:43,970][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+ [INFO][2015-08-28 12:47:44,059][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 646 ms
+ [WARN][2015-08-28 12:59:28,504][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/jsp/js/bootstrap.min.js] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 12:59:28,505][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/jsp/css/bootstrap.min.css] in DispatcherServlet with name 'springMvc'
+ [WARN][2015-08-28 12:59:28,505][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/sshTest/jsp/js/jquery-2.1.4.min.js] in DispatcherServlet with name 'springMvc'
+ [INFO][2015-08-28 13:13:39,778][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 13:13:39,894][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 13:13:39 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 13:13:39,955][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 13:13:40,153][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 13:13:40,267][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 13:13:40,526][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 13:13:40,532][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 13:13:40,569][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@5a3a1bf9: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 13:13:40,861][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 13:13:41,082][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 13:13:41,095][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 13:13:41,100][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 13:13:41,103][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 13:13:42,154][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 13:13:42,213][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 13:13:42,223][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 13:13:42,683][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 13:13:42,683][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 13:13:42,689][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 13:13:42,777][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 13:13:42,777][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 13:13:42,777][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 13:13:42,777][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 13:13:42,807][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 13:13:42,808][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 13:13:42,808][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 13:13:42,808][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 13:13:42,809][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 13:13:43,083][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 13:13:40",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1027217667, ConnectTime:"2015-08-28 13:13:42", UseCount:2, LastActiveTime:"2015-08-28 13:13:42"}
+	]
+}
+
+[
+	{
+	ID:1027217667, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 13:13:43,090][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3311 ms
+ [INFO][2015-08-28 13:13:43,154][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 13:13:43,160][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 13:13:43 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 13:13:43,162][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 13:13:43,204][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 13:13:43,246][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 13:13:43,251][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@486e9d1d: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#1,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#2,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@5a3a1bf9
+ [INFO][2015-08-28 13:13:43,594][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO][2015-08-28 13:13:43,624][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO][2015-08-28 13:13:43,625][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+ [INFO][2015-08-28 13:13:43,714][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 560 ms
+ [INFO][2015-08-28 13:14:57,896][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 13:14:58,029][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 13:14:58 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 13:14:58,112][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 13:14:58,290][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 13:14:58,386][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 13:14:58,685][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 13:14:58,694][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 13:14:58,738][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@446c3920: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 13:14:59,096][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 13:14:59,288][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 13:14:59,296][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 13:14:59,300][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 13:14:59,302][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 13:14:59,961][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 13:14:59,992][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 13:14:59,998][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 13:15:00,616][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 13:15:00,616][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 13:15:00,622][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 13:15:00,683][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 13:15:00,683][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 13:15:00,683][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 13:15:00,684][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 13:15:00,713][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 13:15:00,714][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 13:15:00,714][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 13:15:00,714][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 13:15:00,715][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 13:15:01,042][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 13:14:58",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1613092752, ConnectTime:"2015-08-28 13:14:59", UseCount:2, LastActiveTime:"2015-08-28 13:15:00"}
+	]
+}
+
+[
+	{
+	ID:1613092752, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 13:15:01,053][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3156 ms
+ [INFO][2015-08-28 13:15:01,131][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 13:15:01,137][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 13:15:01 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 13:15:01,139][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 13:15:01,187][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 13:15:01,243][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 13:15:01,247][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64f9f455: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#1,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#2,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@446c3920
+ [INFO][2015-08-28 13:15:01,651][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO][2015-08-28 13:15:01,686][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO][2015-08-28 13:15:01,689][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+ [INFO][2015-08-28 13:15:01,779][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 648 ms
+ [INFO][2015-08-28 14:09:13,213][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 14:09:13,348][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 14:09:13 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 14:09:13,428][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 14:09:13,631][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 14:09:13,729][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 14:09:14,034][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 14:09:14,041][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 14:09:14,080][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@33425811: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 14:09:14,367][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 14:09:14,552][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 14:09:14,565][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 14:09:14,568][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 14:09:14,571][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 14:09:15,477][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 14:09:15,518][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 14:09:15,529][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 14:09:15,974][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 14:09:15,974][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 14:09:15,980][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 14:09:16,072][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 14:09:16,072][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 14:09:16,072][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 14:09:16,072][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 14:09:16,127][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 14:09:16,128][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 14:09:16,128][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 14:09:16,128][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 14:09:16,129][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 14:09:16,415][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 14:09:14",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1756333997, ConnectTime:"2015-08-28 14:09:15", UseCount:2, LastActiveTime:"2015-08-28 14:09:16"}
+	]
+}
+
+[
+	{
+	ID:1756333997, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 14:09:16,426][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3212 ms
+ [INFO][2015-08-28 14:09:16,494][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 14:09:16,501][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 14:09:16 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 14:09:16,502][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 14:09:16,555][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 14:09:16,614][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 14:09:16,618][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@790d8fdd: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#1,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#2,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@33425811
+ [INFO][2015-08-28 14:09:17,027][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO][2015-08-28 14:09:17,066][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO][2015-08-28 14:09:17,069][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+ [INFO][2015-08-28 14:09:17,174][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 679 ms
+ [INFO][2015-08-28 14:23:03,338][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+ [INFO][2015-08-28 14:23:03,496][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Fri Aug 28 14:23:03 CST 2015]; root of context hierarchy
+ [INFO][2015-08-28 14:23:03,568][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring.xml]
+ [INFO][2015-08-28 14:23:03,763][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 14:23:03,869][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-hibernate.xml]
+ [INFO][2015-08-28 14:23:04,145][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [database.properties]
+ [INFO][2015-08-28 14:23:04,151][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 14:23:04,191][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2bc426f0: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,userController,userDao,userService,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,stat-filter,log-filter,dataSource,sessionFactory,txManager,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; root of factory hierarchy
+ [INFO][2015-08-28 14:23:04,468][com.alibaba.druid.pool.DruidDataSource]{dataSource-1} inited
+ [INFO][2015-08-28 14:23:04,691][org.hibernate.annotations.common.Version]HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+ [INFO][2015-08-28 14:23:04,703][org.hibernate.Version]HHH000412: Hibernate Core {4.2.0.Final}
+ [INFO][2015-08-28 14:23:04,706][org.hibernate.cfg.Environment]HHH000206: hibernate.properties not found
+ [INFO][2015-08-28 14:23:04,708][org.hibernate.cfg.Environment]HHH000021: Bytecode provider name : javassist
+ [INFO][2015-08-28 14:23:05,538][org.hibernate.dialect.Dialect]HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+ [INFO][2015-08-28 14:23:05,584][org.hibernate.engine.transaction.internal.TransactionFactoryInitiator]HHH000399: Using default transaction strategy (direct JDBC transactions)
+ [INFO][2015-08-28 14:23:05,593][org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory]HHH000397: Using ASTQueryTranslatorFactory
+ [INFO][2015-08-28 14:23:06,046][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000228: Running hbm2ddl schema update
+ [INFO][2015-08-28 14:23:06,046][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000102: Fetching database metadata
+ [INFO][2015-08-28 14:23:06,050][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000396: Updating schema
+ [INFO][2015-08-28 14:23:06,103][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tstudent
+ [INFO][2015-08-28 14:23:06,103][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [stuspecialty, stugrade, stuid, stusex, stuname, stuno]
+ [INFO][2015-08-28 14:23:06,104][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 14:23:06,104][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 14:23:06,137][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000261: Table found: test_ssh.tuser
+ [INFO][2015-08-28 14:23:06,137][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000037: Columns: [uid, password, username]
+ [INFO][2015-08-28 14:23:06,137][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000108: Foreign keys: []
+ [INFO][2015-08-28 14:23:06,137][org.hibernate.tool.hbm2ddl.TableMetadata]HHH000126: Indexes: [primary]
+ [INFO][2015-08-28 14:23:06,138][org.hibernate.tool.hbm2ddl.SchemaUpdate]HHH000232: Schema update complete
+ [INFO][2015-08-28 14:23:06,467][org.springframework.orm.hibernate4.HibernateTransactionManager]Using DataSource [{
+	CreateTime:"2015-08-28 14:23:04",
+	ActiveCount:0,
+	PoolingCount:1,
+	CreateCount:1,
+	DestroyCount:0,
+	CloseCount:2,
+	ConnectCount:2,
+	Connections:[
+		{ID:1156644651, ConnectTime:"2015-08-28 14:23:05", UseCount:2, LastActiveTime:"2015-08-28 14:23:06"}
+	]
+}
+
+[
+	{
+	ID:1156644651, 
+	poolStatements:[
+		]
+	}
+]] of Hibernate SessionFactory for HibernateTransactionManager
+ [INFO][2015-08-28 14:23:06,474][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3135 ms
+ [INFO][2015-08-28 14:23:06,537][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization started
+ [INFO][2015-08-28 14:23:06,544][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'springMvc-servlet': startup date [Fri Aug 28 14:23:06 CST 2015]; parent: Root WebApplicationContext
+ [INFO][2015-08-28 14:23:06,545][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+ [INFO][2015-08-28 14:23:06,586][org.springframework.context.annotation.ClassPathBeanDefinitionScanner]JSR-330 'javax.inject.Named' annotation found and supported for component scanning
+ [INFO][2015-08-28 14:23:06,639][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+ [INFO][2015-08-28 14:23:06,642][org.springframework.beans.factory.support.DefaultListableBeanFactory]Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@43935e9c: defining beans [userController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,mappingJacksonHttpMessageConverter,org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter#0,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#1,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#2,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@2bc426f0
+ [INFO][2015-08-28 14:23:06,970][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+ [INFO][2015-08-28 14:23:07,004][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+ [INFO][2015-08-28 14:23:07,005][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+ [INFO][2015-08-28 14:23:07,092][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'springMvc': initialization completed in 554 ms
+ 
