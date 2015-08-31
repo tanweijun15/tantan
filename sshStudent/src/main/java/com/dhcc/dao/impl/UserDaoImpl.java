@@ -1,0 +1,50 @@
+/**
+ * Copyright (c) 2008-2015 by DHCC
+ * All rights reserved.
+ */
+package com.dhcc.dao.impl;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.dhcc.dao.IUserDao;
+import com.dhcc.model.User;
+
+/**
+ * @author <a href="mailto:tanweijun@dhcc.com.cn">tanweijun</a>
+ * @date 2015年8月28日
+ */
+@Transactional
+@Repository("userDao")
+public class UserDaoImpl implements IUserDao {
+	//注入sessionfactory
+	@Autowired
+	@Qualifier("sessionFactory")
+    private SessionFactory sessionFactory;
+
+	@Override
+	public boolean login(User user) {
+		Session session = sessionFactory.getCurrentSession();
+		//获取表单的登录信息
+		//String username = user.getUsername();
+		//String password = user.getPassword();
+		
+        //根据用户名和密码查询用户是否存在
+        String hql = "from User where username = ? and password = ?";
+        Query query = session.createQuery(hql);
+        query.setString(0, user.getUsername());
+		query.setString(1, user.getPassword());
+		int count = query.list().size();
+        if (1<=count) {
+            return true;
+        } else {
+            return false;
+        }
+	}
+
+}
